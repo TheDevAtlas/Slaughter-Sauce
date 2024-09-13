@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://hf5w248y7mgx"]
+[gd_scene load_steps=9 format=3 uid="uid://hf5w248y7mgx"]
 
 [ext_resource type="Texture2D" uid="uid://btytpp8rchcuj" path="res://Textures/Floor/TestFloorTile.png" id="1_dimao"]
 [ext_resource type="Script" path="res://Player.gd" id="2_ls5kj"]
 [ext_resource type="PackedScene" uid="uid://xnctvac1vdnj" path="res://Models/Table.tscn" id="3_usttp"]
+[ext_resource type="PackedScene" uid="uid://1jbatrjnglcp" path="res://Models/Player/PlayerWalkCycle-loop.tscn" id="4_l7gw3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xff2v"]
 size = Vector3(18, 0.113281, 10)
@@ -55,7 +56,7 @@ material_override = SubResource("StandardMaterial3D_qa754")
 script = ExtResource("2_ls5kj")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Player1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -63,8 +64,32 @@ axis_lock_angular_z = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player1/RigidBody3D"]
 shape = SubResource("SphereShape3D_hfgmd")
 
+[node name="Walking" parent="Player1/RigidBody3D" instance=ExtResource("4_l7gw3")]
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0, -0.326237, 0)
+
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Player1/RigidBody3D"]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+visible = false
+
+[node name="Player2" type="Node" parent="."]
+script = ExtResource("2_ls5kj")
+player_index = 1
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Player2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0)
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player2/RigidBody3D"]
+shape = SubResource("SphereShape3D_hfgmd")
+
+[node name="Walking" parent="Player2/RigidBody3D" instance=ExtResource("4_l7gw3")]
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0, -0.326237, 0)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Player2/RigidBody3D"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+visible = false
 
 [node name="Tables" type="Node" parent="."]
 
