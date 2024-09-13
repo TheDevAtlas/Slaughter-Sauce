@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://xnctvac1vdnj"]
+
+[ext_resource type="PackedScene" uid="uid://ysmgb4oxpgpc" path="res://Models/Table.glb" id="1_vydk2"]
+[ext_resource type="Texture2D" uid="uid://d3oxjoyprc62u" path="res://Textures/Objects/TestTable.png" id="2_86h40"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ke44"]
+albedo_color = Color(0.45098, 0.243137, 0.121569, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_luik7"]
+albedo_color = Color(0.678431, 0.482353, 0.239216, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c24l0"]
+albedo_color = Color(0.85098, 0.737255, 0.603922, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sd7qa"]
+albedo_color = Color(0.807843, 0.611765, 0.415686, 1)
+albedo_texture = ExtResource("2_86h40")
+
+[node name="Table" instance=ExtResource("1_vydk2")]
+
+[node name="Cube" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_7ke44")
+
+[node name="Cube_002" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_luik7")
+
+[node name="Sphere" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_c24l0")
+
+[node name="Cube_001" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_sd7qa")
