@@ -21,12 +21,12 @@ size = Vector3(1.31665, 0.701172, 1.29688)
 [node name="Kitchen" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(0.434348, 0.780069, -0.450372, 1.47562e-08, 0.499998, 0.866027, 0.900745, -0.376156, 0.217173, 0, 0, 0)
 light_energy = 0.9
 shadow_enabled = true
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.998177, -0.0522628, 0.0301738, -1.49013e-08, 0.499998, 0.866027, -0.0603478, -0.864448, 0.499087, 0, 0, 0)
+transform = Transform3D(-0.858994, -0.443394, 0.255993, -1.36495e-08, 0.499998, 0.866027, -0.511986, 0.743911, -0.429496, 0, 0, 0)
 light_energy = 0.1
 shadow_enabled = true
 
